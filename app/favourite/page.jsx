@@ -1,3 +1,9 @@
-export default function favourite(){
-    return <h1>fav</h1>
+export default function favourite() {
+  return (
+    <div>
+      <main>
+        <h1>favourite</h1>
+      </main>
+    </div>
+  );
 }
