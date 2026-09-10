@@ -1,0 +1,15 @@
+.genreList {
+  padding: 0.5rem 1rem;
+  background-color: #1c1c1c;
+  color: #ccc;
+  text-decoration: none;
+  border-radius: 2rem;
+  border: 1px solid #333;
+  transition: 0.3s;
+  font-size: 0.8rem;
+  margin-left:0.7rem;
+}
+
+.active {
+  background-color: #e50914;
+}

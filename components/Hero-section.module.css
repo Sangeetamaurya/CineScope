@@ -1,0 +1,12 @@
+.hero {
+  postion: relative;
+}
+.heroImg {
+  position: absolute;
+  z-index: 1;
+}
+.heroTitle {
+  position: relative;
+  z-index: 2;
+  color: white;
+}

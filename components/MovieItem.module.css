@@ -1,0 +1,13 @@
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.movieItem {
+  border-radius: 10px;
+}
+.title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: bold;
+}

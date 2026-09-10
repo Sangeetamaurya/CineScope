@@ -1,0 +1,7 @@
+.Movies {
+  position: absolute;
+  z-index: 2;
+  top: 80%;
+  left: 2%;
+  right: 2%;
+}
