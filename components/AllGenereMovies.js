@@ -1,5 +1,6 @@
 import { getByGenre } from "@/lib/TMDB";
-import MovieItem from "@/components/MovieItem";
+import MovieSection from "./MovieSection";
+import classes from "./AllGenereMovies.module.css";
 
 export default async function AllGenereMovies() {
   const [
@@ -24,17 +25,16 @@ export default async function AllGenereMovies() {
     getByGenre(53), // Thriller
   ]);
   return (
-    <div>
-      <MovieItem movies={actionMovies} title="Action " />
-      <MovieItem movies={adventureMovies} title="Adventure " />
-      <MovieItem movies={animationMovies} title="Animation " />
-
-      <MovieItem movies={comedyMovies} title="Comedy " />
-      <MovieItem movies={crimeMovies} title="Crime " />
-      <MovieItem movies={horrorMovies} title="Horror " />
-      <MovieItem movies={romanceMovies} title="Romance " />
-      <MovieItem movies={scienceFictionMovies} title="ScienceFiction" />
-      <MovieItem movies={thrillerMovies} title="Thriller" />
+    <div className={classes.Movies}>
+      <MovieSection movies={actionMovies} title="Action " />
+      <MovieSection movies={adventureMovies} title="Adventure " />
+      <MovieSection movies={animationMovies} title="Animation " />
+      <MovieSection movies={comedyMovies} title="Comedy " />
+      <MovieSection movies={crimeMovies} title="Crime " />
+      <MovieSection movies={horrorMovies} title="Horror " />
+      <MovieSection movies={romanceMovies} title="Romance " />
+      <MovieSection movies={scienceFictionMovies} title="ScienceFiction" />
+      <MovieSection movies={thrillerMovies} title="Thriller" />
     </div>
   );
 }

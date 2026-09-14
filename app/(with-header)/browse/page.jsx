@@ -1,9 +1,9 @@
-import AllGenereMovies from "../../components/AllGenereMovies";
-import GenereSelect from "../../components/GenereSelect";
-import GenreFilter from "../../components/GenereFilter";
-import { getTrendingMovies, getMovies, getByGenre } from "@/lib/TMDB";
+import AllGenereMovies from "../../../components/AllGenereMovies";
+import GenereSelect from "../../../components/GenereSelect";
+import GenreFilter from "../../../components/GenereFilter";
+import {  getByGenre } from "@/lib/TMDB";
 import MovieItem from "@/components/MovieItem";
-import { movieTitle } from "../../lib/movieTitle";
+import { movieTitle } from "../../../lib/movieTitle";
 
 export default async function Browse({ searchParams }) {
   const { genre } = await searchParams;
@@ -19,7 +19,7 @@ export default async function Browse({ searchParams }) {
     >
       <GenereSelect />
       {genre ? (
-        <MovieItem movies={filterGenre} title={title} />
+        <MovieItem movies={filterGenre} title={title} displayButton={false}/>
       ) : (
         <AllGenereMovies />
       )}

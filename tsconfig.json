@@ -31,8 +31,8 @@
     "**/*.mts",
     "components/Header.js",
     "lib/TMDB.js",
-    "app/page.jsx",
+    "app/(with-header)/page.jsx",
     "app/layout.jsx"
-  ],
+, "components/MovieSection.js"  ],
   "exclude": ["node_modules"]
 }

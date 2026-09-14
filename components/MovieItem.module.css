@@ -1,7 +1,12 @@
 .movieGrid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
+}
+
+.movieGrid:hover button {
+  opacity: 1;
 }
 .movieItem {
   border-radius: 10px;
@@ -10,4 +15,49 @@
   font-size: 1.5rem;
   margin: 10px 0;
   font-weight: bold;
+}
+.prevButton {
+  position: absolute;
+  margin-top: 8.5rem;
+  left: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.nextButton {
+  position: absolute;
+  margin-top: 8.5rem;
+  right: 0;
+  cursor: pointer;
+}
+.prevButton,
+.nextButton {
+  width: 40px;
+  height: 60px;
+  font-size: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.movieItem {
+  display: block;
+  border-radius: 10px;
+}
+
+.favIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  z-index: 2;
+  cursor: pointer;
 }

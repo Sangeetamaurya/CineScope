@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import classes from "../components/Headear.module.css";
 import Image from "next/image";
@@ -12,9 +12,9 @@ export default function Header() {
   const pathname = usePathname();
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>
+      <Link href="/" className={classes.logo}>
         Cine<span>Scope</span>
-      </div>
+      </Link>
       <nav className={classes.nav}>
         <Link href="/" className={classes.navLink}>
           Home
@@ -30,10 +30,7 @@ export default function Header() {
           )}
         </Link>
       </nav>
-      {/* <nav className={classes.nav}>
-        <Link href="/">Home</Link>
-        <Link href="/browse">Browse</Link>
-      </nav> */}
+
       {/* <div className={classes.searchBox}>
         <input
           type="text"
@@ -60,7 +57,7 @@ export default function Header() {
           alt="searchicon"
           loading="eager"
         />
-        <Link href="favourite">
+        <Link href="/favourite">
           <Image src={favouriteIcon} alt="fav" />
         </Link>
       </div>
