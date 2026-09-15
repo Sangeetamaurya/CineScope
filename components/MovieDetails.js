@@ -1,12 +1,15 @@
 import Image from "next/image";
 import classes from "./MovieDetails.module.css";
 import BackButton from "./BackButton";
+// import { FaHeart, FaRegHeart } from "react-icons/fa";
+// import favourites from "../lib/fetchFavourites";
+import FavouriteButton from "./FaviouriteButton";
 
 const TMDB_IMAGE = "https://image.tmdb.org/t/p";
 
 export default function MovieDetails({ data }) {
   if (!data) return null;
-
+  // const isFav = favourites.some((movie) => movie.id === data.id);
   const backdropUrl = data.backdrop_path
     ? `${TMDB_IMAGE}/original${data.backdrop_path}`
     : null;
@@ -44,6 +47,14 @@ export default function MovieDetails({ data }) {
 
       <div className={classes.topControls}>
         <BackButton classes={classes.iconButton} />
+        <div className={classes.rightControls}>
+          {/* {isFav ? (
+            <FaHeart className={classes.iconButton} color="red" />
+          ) : (
+            <FaRegHeart className={classes.iconButton} color="white" />
+          )} */}
+          <FavouriteButton movie={data} className={classes.favIcon} />
+        </div>
       </div>
 
       <div className={classes.content}>

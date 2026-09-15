@@ -3,12 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import classes from "@/components/MovieItem.module.css";
+import FavouriteButton from "./FaviouriteButton";
 // import favouriteIcon from "@/Images/favouriteIcon.png";
-import { useDispatch, useSelector } from "react-redux";
-import { addMovie, removeMovie } from "@/store/favouriteMovieSlice";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import toggleFavourite from "./toggleFavourite";
-
+// import { useDispatch, useSelector } from "react-redux";
+// import { addMovie, removeMovie } from "@/store/favouriteMovieSlice";
+// import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default function MovieItem({
   movies,
@@ -19,8 +18,8 @@ export default function MovieItem({
   lastPage,
   displayButton = true,
 }) {
-  const dispatch = useDispatch();
-  const favourites = useSelector((state) => state.favouriteMovies.movies);
+  // const dispatch = useDispatch();
+  // const favourites = useSelector((state) => state.favouriteMovies.movies);
 
   // const toggleFavourite = (movie) => {
   //   const isFav = favourites.some((m) => m.id === movie.id);
@@ -44,7 +43,7 @@ export default function MovieItem({
           ""
         )}
         {movies.map((movie) => {
-          const isFav = favourites.some((m) => m.id === movie.id);
+          // const isFav = favourites.some((m) => m.id === movie.id);
           return (
             <div key={movie.id} className={classes.movieCard}>
               <div className={classes.imageWrapper}>
@@ -58,35 +57,7 @@ export default function MovieItem({
                   />
                 </Link>
 
-                {isFav ? (
-                  <FaHeart
-                    className={classes.favIcon}
-                    color="red"
-                    onClick={() =>
-                      toggleFavourite({
-                        movie,
-                        isFav,
-                        dispatch,
-                        addMovie,
-                        removeMovie,
-                      })
-                    }
-                  />
-                ) : (
-                  <FaRegHeart
-                    className={classes.favIcon}
-                    color="white"
-                    onClick={() =>
-                      toggleFavourite({
-                        movie,
-                        isFav,
-                        dispatch,
-                        addMovie,
-                        removeMovie,
-                      })
-                    }
-                  />
-                )}
+                <FavouriteButton movie={movie} className={classes.favIcon} />
               </div>
             </div>
           );
